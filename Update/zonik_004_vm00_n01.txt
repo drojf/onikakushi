@@ -96,11 +96,11 @@ void dialog003()
 	OutputLine(NULL, "　レナんちに墜落したのはなんと……",
 		   NULL, " What fell on Rena's house...", Line_Continue);
 
-	PlaySE( 4, "wa_008", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_008", 56, 64 ); }
 	Wait( 200 );
-	PlaySE( 4, "wa_008", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_008", 56, 64 ); }
 	Wait( 200 );
-	PlaySE( 4, "wa_008", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_008", 56, 64 ); }
 	Wait( 200 );
 	OutputLineAll(NULL, "", Line_WaitForInput);
 
@@ -109,7 +109,8 @@ void dialog003()
 	OutputLine(NULL, "スペースコロニーだッ！！」",
 		   NULL, "Was a space colony!!\"", Line_Continue);
 
-	PlaySE( 4, "wa_007", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_007", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Finish", 56, 64 ); }
 	ShakeScreen( 1, 50, 20, 3, 0, );
 	OutputLineAll(NULL, "", Line_Normal);
 
@@ -140,7 +141,7 @@ void dialog003()
 	OutputLine(NULL, "　なんとこれこそは…ジオン広告社が引き起こした独立戦争の幕開けだったのだッ！！」",
 		   NULL, " This is the beginning... the start of a war for independence by the Propagandapality of Zeon!!\"", Line_Continue);
 
-	PlaySE( 4, "wa_007", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_007", 56, 64 ); }
 	ShakeScreen( 0, 50, 20, 3, 0, );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 
@@ -206,6 +207,9 @@ void dialog004()
 	OutputLine(NULL, "効かなかったのは弱点を知らなかったからだ。",
 		   NULL, " The reason it didn't work was because they didn't know the weak point.", Line_WaitForInput);
 	ModPlayVoiceLS(3, 1, "ps3/s19/01/hr_kei06020", 256, TRUE);
+//Failed to insert some PS3 instruction!
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Finish", 256, 64 ); }
+//End failed instructions
 	OutputLine(NULL, "もちろんレナは白色彗星の弱点だって熟知してる！」",
 		   NULL, " Of course, Rena knows their weak point all too well!\"", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }

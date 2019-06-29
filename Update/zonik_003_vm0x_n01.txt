@@ -136,7 +136,8 @@ void dialog009()
 	ClearMessage();
 	DisableWindow();
 
-	PlaySE( 4, "wa_027", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_027", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Tataku", 56, 64 ); }
 
 	//draw big CG
 	SetValidityOfInterface(FALSE);
@@ -154,6 +155,9 @@ void dialog009()
 //「わああぁあぁあぁあぁあッ！！！」/
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 1, "ps3/s19/01/hr_kei05020", 256, TRUE);
+//Failed to insert some PS3 instruction!
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Metal43", 256, 64 ); }
+//End failed instructions
 	OutputLine(NULL, "「わああぁあぁあぁあぁあッ！！！」",
 		   NULL, "\"AhhHhhhHhHhhh!!!\"", Line_ContinueAfterTyping);
 
@@ -164,7 +168,8 @@ void dialog009()
 	//adjust character size and reset big CG layer and add shaking
 	ModDrawCharacter(2, 2, "sprite/sunset/re1b_bikkuri_b1_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 0, FALSE );
 	DrawScene("background/mo_g1_01", 300 );
-	PlaySE( 4, "wa_003", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_003", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/addse13", 56, 64 ); }
 	StartShakingOfAllObjects( 1, 50, 10, 4, 20, TRUE);
 	SetValidityOfInterface(TRUE);
 	SetValidityOfSaving(TRUE);
@@ -187,7 +192,8 @@ void dialog009()
 		   NULL, "Rena dropped the hatchet she was holding onto the grass after being startled by my voice.", Line_Normal);
 	ClearMessage();
 
-	PlayBGM( 1, "msys11", 56, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlayBGM( 1, "msys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 1, "ps3/Higurasi", 56, 0 ); }
 	DisableWindow();
 	ModDrawCharacter(2, 2, "sprite/sunset/re1a_komaru_a2_", "0", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
 

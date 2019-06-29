@@ -15,7 +15,7 @@ void main()
 	DrawSceneWithMask("white", "m1", 0, 0, 3000 );
 	ModDrawCharacterWithFiltering(1, 3, "sprite/normal/me1a_def_a1_", "0", "m1", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, FALSE );
 	DrawSceneWithMask("background/gk3", "down", 0, 0, 1300 );
-	PlayBGM( 1, "msys01", 56, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlayBGM( 1, "msys01", 56, 0 ); }
 
 	//VoiceMatching
 	if(GetGlobalFlag(GCensor) >= 2){ModCallScriptSection("zonik_003_vm0x_n01","dialog000");}
@@ -144,14 +144,15 @@ void main()
 	ClearMessage();
 	DisableWindow();
 	DrawSceneWithMask("background/gk1", "down", 0, 0, 1300 );
-	PlaySE( 4, "wa_020", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_020", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Door", 56, 64 ); }
 	SetValidityOfInput( FALSE );
 	Wait( 1500 );
 	SetValidityOfInput( TRUE );
 	ModDrawCharacterWithFiltering(3, 2, "sprite/normal/re1a_def_a1_", "0", "m1", 1, 160, 0, FALSE, 0, 0, 0, 0, 0, 20, 300, FALSE );
 	ModDrawCharacterWithFiltering(1, 4, "sprite/normal/sa1a_def_a1_", "1", "m1", 1, -160, 0, FALSE, 0, 0, 0, 0, 0, 0, 300, TRUE );
 
-	PlayBGM( 1, "msys02", 56, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlayBGM( 1, "msys02", 56, 0 ); }
 //「ごめんねごめんね＠　待たせちゃったかな？…かな？＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#f0953d>レナ</color>", NULL, "<color=#f0953d>Rena</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 2, "ps3/s19/02/990200171", 256, TRUE);
@@ -607,7 +608,8 @@ void main()
 		   NULL, "Like Old Bachelor!?\"", Line_Continue);
 
 	Wait( 2000 );
-	PlaySE( 4, "wa_007", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_007", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Finish", 56, 64 ); }
 	ShakeScreen( 1, 20, 20, 5, 0, );
 	OutputLineAll(NULL, "", Line_Normal);
 
@@ -765,7 +767,8 @@ void main()
 	DisableWindow();
 	ModDrawCharacterWithFiltering(2, 3, "sprite/normal/me1a_def_a1_", "0", "up", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 10, 0, FALSE );
 	DrawSceneWithMask("background/gk3", "left", 0, 0, 300 );
-	PlayBGM( 1, "msys04", 56, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlayBGM( 1, "msys04", 56, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 1, "ps3/HM01_02", 56, 0 ); }
 
 //「じゃあ１枚抜くね。＠
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#5ec69a>魅音</color>", NULL, "<color=#5ec69a>Mion</color>", NULL, Line_ContinueAfterTyping); }
@@ -926,7 +929,8 @@ void main()
 	OutputLine(NULL, "ガン牌ジジ抜き！！",
 		   NULL, " then they were playing with the answer sheet in front of them!!", Line_ContinueAfterTyping);
 
-	PlaySE( 4, "wa_007", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_007", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Finish", 56, 64 ); }
 	ShakeScreen( 1, 50, 20, 3, 0, );
 
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
@@ -1032,7 +1036,7 @@ void main()
 	OutputLine(NULL, "　あがりですのー！！」",
 		   NULL, " I am out!!\"", GetGlobalFlag(GLinemodeSp));
 
-//	PlaySE( 4, "wa_007", 56, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_007", 56, 0 ); }
 //	ShakeScreen( 1, 50, 20, 3, 0, );
 
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
@@ -1093,7 +1097,8 @@ void main()
 		   NULL, " ...I'm out!\"", Line_Continue);
 
 	Wait( 2000 );
-	PlaySE( 4, "wa_006", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_006", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Daidageki", 56, 64 ); }
 	ShakeScreen( 1, 20, 20, 5, 0, );
 
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
@@ -1404,7 +1409,8 @@ void main()
 
 
 
-	PlaySE( 4, "wa_010", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_010", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Kyupirn", 56, 64 ); }
 //　俺はその一瞬の表情を見逃さないッ！￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　俺はその一瞬の表情を見逃さないッ！！",
@@ -1431,7 +1437,8 @@ void main()
 	OutputLine(NULL, "　スペードの７…！！！",
 		   NULL, " Seven of Spades...!!!", Line_ContinueAfterTyping);
 
-	PlaySE( 4, "wa_007", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_007", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Finish", 56, 64 ); }
 	ShakeScreen( 1, 50, 20, 3, 0, );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 
@@ -1559,7 +1566,8 @@ void main()
 	OutputLine(NULL, "俺が…新しく！！",
 		   NULL, " a new one on it!!", Line_ContinueAfterTyping);
 
-	PlaySE( 4, "wa_010", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_010", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Kyupirn", 56, 64 ); }
 	ShakeScreen( 1, 20, 20, 5, 0, );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 
@@ -1791,7 +1799,7 @@ void main()
 	OutputLine(NULL, "　乗ってやる！！！！」",
 		   NULL, " You've got it!!!!\"", Line_Continue);
 
-//	PlaySE( 4, "wa_007", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_007", 56, 64 ); }
 //	ShakeScreen( 1, 50, 20, 3, 0, );
 	OutputLineAll(NULL, "", Line_Normal);
 
@@ -2184,7 +2192,7 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
-//	PlaySE( 4, "wa_007", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_007", 56, 64 ); }
 //	ShakeScreen( 1, 50, 20, 3, 0, );
 
 //　みんなが一斉に場に捨てられたカードを凝視する＠
@@ -2247,11 +2255,14 @@ void main()
 	DisableWindow();
 	DrawScene("black", 400 );
 
-	PlaySE( 4, "wa_008", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_008", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Furu", 56, 64 ); }
 	Wait( 200 );
-	PlaySE( 4, "wa_008", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_008", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Furu", 56, 64 ); }
 	Wait( 200 );
-	PlaySE( 4, "wa_008", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_008", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Furu", 56, 64 ); }
 	Wait( 200 );
 
 //「ジョーカーは!s200……!sd「左手」だぁあぁああああぁああッッ！！！！！！」/
@@ -2273,7 +2284,8 @@ void main()
 	DisableWindow();
 	DrawScene("white", 10 );
 	DrawBustshot(5, "background/furiker_b", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 0, 50, TRUE );
-	PlaySE( 4, "wa_007", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_007", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Finish", 56, 64 ); }
 	ShakeScreen( 1, 50, 20, 3, 0, );
 	DrawScene("background/gk1", 200 );
 	OutputLineAll(NULL, "", Line_Normal);
@@ -2345,7 +2357,8 @@ void main()
 
 	SetSpeedOfMessage( FALSE, 0, );
 
-	PlaySE( 4, "wa_007", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_007", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Finish", 56, 64 ); }
 	ShakeScreen( 1, 50, 20, 3, 0, );
 	OutputLine(NULL, "逆転勝利だッッ！！！！！！！",
 		   NULL, " comeback victory!!!!!!!", Line_Normal);
@@ -2555,9 +2568,14 @@ void main()
 	ClearMessage();
 
 
-	PlayBGM( 1, "msys01", 56, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlayBGM( 1, "msys01", 56, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 1, "ps3/HM01_01", 56, 0 ); }
 //　放心しがっくりと膝をついた瞬間、みんなはこの好ゲームを割れんばかりの拍手で称えてくれた￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+//Failed to insert some PS3 instruction!
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Finish", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/addse04", 256, 64 ); }
+//End failed instructions
 	OutputLine(NULL, "　放心しがっくりと膝をついた瞬間、みんなはこの好ゲームを割れんばかりの拍手で称えてくれた。",
 		   NULL, "As I slumped to my knees, dazed, everybody let out a round of applause for the excellent effort I gave despite my defeat.", Line_Normal);
 	ClearMessage();
@@ -2584,6 +2602,9 @@ void main()
 
 //　みんながきゃっきゃと喜びながら拍手する＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+//Failed to insert some PS3 instruction!
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/addse04", 256, 64 ); }
+//End failed instructions
 	OutputLine(NULL, "　みんながきゃっきゃと喜びながら拍手する。",
 		   NULL, "Everyone made a commotion, applauding cheerfully.", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
@@ -2787,7 +2808,7 @@ void main()
 
 //mov %CAMP_MUGIC,3
 	FadeOutBGM( 1, 1000, TRUE );
-	PlayBGM( 0, "lsys12", 56, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlayBGM( 0, "lsys12", 56, 0 ); }
 	DisableWindow();
 	SetValidityOfInput( FALSE );
 //	Wait( 3000 );
@@ -2804,8 +2825,10 @@ void main()
 
 	FadeOutBGM( 0, 1000, TRUE );
 	DisableWindow();
-	PlayBGM( 1, "msys05", 56, 0 );
-	PlaySE( 4, "wa_001", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlayBGM( 1, "msys05", 56, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 1, "ps3/HM01_07", 56, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_001", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Chaimu", 56, 64 ); }
 	SetValidityOfInput( FALSE );
 	Wait( 3000 );
 	SetValidityOfInput( TRUE );
@@ -3125,7 +3148,8 @@ void main()
 	DrawScene("background/ma_s1", 1000 );
 
 
-	PlayBGM( 1, "msys01", 56, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlayBGM( 1, "msys01", 56, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 1, "ps3/HM01_01", 56, 0 ); }
 //　自宅に着き、見事にお袋と鉢合わせして、俺は改めて恥をかくことになったのだった…￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　自宅に着き、見事にお袋と鉢合わせして、俺は改めて恥をかくことになったのだった…。",
@@ -3135,6 +3159,35 @@ void main()
 
 //　帰宅早々、家は神経質なムードでぴりぴりしていた＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+//Failed to insert some PS3 instruction!
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 2, "ps3/HM01_01", 128, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 2, "ps3/HM01_07", 128, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 2, "ps3/HM01_06", 128, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 2, "ps3/HM01_07", 128, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 2, "ps3/HM01_06", 128, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 2, "ps3/HM01_07", 128, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Furu", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Furu", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Furu", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Finish", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Finish", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Finish", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/addse04", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/addse04", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Chaimu", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Furu", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Furu", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Furu", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Finish", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Finish", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Chaimu", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Furu", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Furu", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Furu", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Finish", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Finish", 256, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Chaimu", 256, 64 ); }
+//End failed instructions
 	OutputLine(NULL, "　帰宅早々、家は神経質なムードでぴりぴりしていた。",
 		   NULL, "The mood I'd come home to was already on edge.", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
@@ -3321,7 +3374,8 @@ void main()
 	FadeOutBGM( 1, 1000, TRUE );
 	DrawSceneWithMask("background/hi4", "right", 0, 0, 1300 );
 
-	PlayBGM( 1, "msys12", 56, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlayBGM( 1, "msys12", 56, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 1, "ps3/Semi", 56, 0 ); }
 //　散歩ったって、どこへ行くあてもない＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　散歩ったって、どこへ行くあてもない。",
@@ -3426,7 +3480,8 @@ void main()
 
 	DisableWindow();
 	DrawSceneWithMask("background/m_hi8", "right", 0, 0, 1300 );
-	PlayBGM( 2, "lsys19", 56, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlayBGM( 2, "lsys19", 56, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 2, "ps3/Kawa", 56, 0 ); }
 
 //　ひょっとすると富竹さんがいるかもしれない＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -3541,7 +3596,8 @@ void main()
 
 
 
-	PlayBGM( 1, "msysRe", 56, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlayBGM( 1, "msysRe", 56, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 1, "ps3/HM01_04", 56, 0 ); }
 	DisableWindow();
 	ModDrawCharacterWithFiltering(2, 2, "sprite/normal/re1a_bikkuri_a1_", "2", "up", 1, 0, 0, FALSE, 0, 0, 0, 0, 0, 10, 1300, TRUE );
 
@@ -3872,18 +3928,21 @@ void main()
 	DisableWindow();
 	FadeBustshotWithFiltering( 2, "down", 1, FALSE, 0, 0, 1300, TRUE );
 
-	PlaySE( 4, "wa_008", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_008", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Furu", 56, 64 ); }
 	Wait( 600 );
 //　廃材を抜いたり/
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　廃材を抜いたり",
 		   NULL, "Pulling out scraps,", Line_ContinueAfterTyping);
-	PlaySE( 4, "wa_019", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_019", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Waru", 56, 64 ); }
 	Wait( 600 );
 //折ったり/
 	OutputLine(NULL, "折ったり",
 		   NULL, " bending them,", Line_ContinueAfterTyping);
-	PlaySE( 4, "wa_015", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_015", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Nageru", 56, 64 ); }
 //投げ飛ばしたり＠
 	OutputLine(NULL, "投げ飛ばしたり。",
 		   NULL, " tossing them aside.", GetGlobalFlag(GLinemodeSp));
@@ -3898,17 +3957,20 @@ void main()
 	ClearMessage();
 
 
-	PlaySE( 4, "wa_015", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_015", 56, 64 ); }
 	Wait( 400 );
-	PlaySE( 4, "wa_002", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_002", 56, 64 ); }
 	Wait( 400 );
-	PlaySE( 4, "wa_015", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_015", 56, 64 ); }
 	Wait( 400 );
-	PlaySE( 4, "wa_003", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_003", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Nageru", 56, 64 ); }
 	Wait( 400 );
-	PlaySE( 4, "wa_015", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_015", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Down", 56, 64 ); }
 	Wait( 400 );
-	PlaySE( 4, "wa_004", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_004", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Nageru", 56, 64 ); }
 	Wait( 200 );
 //　黄昏時の空の中、次々と綺麗な放物線を描いて飛んで行＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -3917,19 +3979,22 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
-	PlaySE( 4, "wa_019", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_019", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Down2", 56, 64 ); }
 	ShakeScreen( 1, 30, 20, 3, 0, );
 	Wait( 400 );
 //　木材＠角材＠ベニヤ板＠
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　木材、",
 		   NULL, "Lumber,", Line_ContinueAfterTyping);
-	PlaySE( 4, "wa_018", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_018", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Nageru", 56, 64 ); }
 	ShakeScreen( 1, 30, 20, 3, 0, );
 	Wait( 400 );
 	OutputLine(NULL, "角材、",
 		   NULL, " timber,", Line_ContinueAfterTyping);
-	PlaySE( 4, "wa_003", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_003", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Down3", 56, 64 ); }
 	ShakeScreen( 1, 30, 20, 3, 0, );
 	OutputLine(NULL, "ベニヤ板。",
 		   NULL, " plywood.", GetGlobalFlag(GLinemodeSp));
@@ -4000,7 +4065,8 @@ void main()
 
 
 	DisableWindow();
-	PlaySE( 4, "wa_016", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_016", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Pou", 56, 64 ); }
 	ModDrawCharacter(2, 2, "sprite/normal/re1a_bikkuri_a1_", "2", 0, 0, 0, FALSE, 0, 0, 0, 0, 0, 0, 0, 10, 200, TRUE );
 	Wait( 100 );
 
@@ -4029,11 +4095,15 @@ void main()
 
 	DisableWindow();
 	DrawSceneWithMask("black", "down", 0, 0, 3000 );
-	PlaySE( 4, "wa_003", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_003", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Down", 56, 64 ); }
 	DrawSceneWithMask("background/mo_g2_01", "down", 0, 0, 100 );
 	ShakeScreen( 1, 50, 20, 3, 0, );
 
 //「さすがに…休憩……＠　こいつは…手ごわいぜ…！！＠
+//Failed to insert some PS3 instruction!
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 1, "ps3/Higurasi", 128, 0 ); }
+//End failed instructions
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 1, "ps3/s19/01/hr_kei04850", 256, TRUE);
 	OutputLine(NULL, "「さすがに…休憩……！",
@@ -4107,7 +4177,8 @@ void main()
 	FadeBustshotWithFiltering( 2, "left", 1, FALSE, 0, 0, 1300, TRUE );
 
 //gosub *Ch_re_si
-	PlayBGM( 2, "lsys11", 56, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlayBGM( 2, "lsys11", 56, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 2, "ps3/HM01_04", 56, 0 ); }
 //　ひぐらしの声がゆっくりと空気を冷やして行く￥
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　ひぐらしの声がゆっくりと空気を冷やして行く。",
@@ -4162,7 +4233,8 @@ void main()
 	ClearMessage();
 
 
-	PlayBGM( 1, "msys15", 56, 0 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlayBGM( 1, "msys15", 56, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 1, "ps3/HM06_26", 56, 0 ); }
 
 	//VoiceMatching
 	if(GetGlobalFlag(GCensor) >= 5){ModCallScriptSection("zonik_003_vm0x_n01","dialog014");}
@@ -4206,7 +4278,8 @@ void main()
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
 
-	PlaySE( 4, "wa_021", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_021", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Kami", 56, 64 ); }
 	SetValidityOfInput( FALSE );
 	Wait( 400 );
 	SetValidityOfInput( TRUE );
@@ -4216,7 +4289,8 @@ void main()
 	OutputLine(NULL, "　ない。",
 		   NULL, "Not here.", Line_WaitForInput);
 
-	PlaySE( 4, "wa_021", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_021", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Kami", 56, 64 ); }
 	SetValidityOfInput( FALSE );
 	Wait( 400 );
 	SetValidityOfInput( TRUE );
@@ -4226,7 +4300,8 @@ void main()
 		   NULL, " Next one.", Line_WaitForInput);
 
 
-	PlaySE( 4, "wa_021", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_021", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Kami", 56, 64 ); }
 	SetValidityOfInput( FALSE );
 	Wait( 400 );
 	SetValidityOfInput( TRUE );
@@ -4234,7 +4309,8 @@ void main()
 	OutputLine(NULL, "ない。",
 		   NULL, " Not here.", Line_WaitForInput);
 
-	PlaySE( 4, "wa_021", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_021", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Kami", 56, 64 ); }
 	SetValidityOfInput( FALSE );
 	Wait( 400 );
 	SetValidityOfInput( TRUE );
@@ -4349,7 +4425,8 @@ void main()
 
 
 	FadeOutBGM( 1, 1000, TRUE );
-	PlaySE( 4, "wa_022", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_022", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/IWAKANNNOHATUGA", 56, 64 ); }
 	Negative( 100 , TRUE );
 //"雛見沢ダム・作業員リンチ死！　バラバラ殺人！！"!w5000@
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
@@ -4468,7 +4545,8 @@ void main()
 	OutputLine(NULL, "　…俺はためらいもなく次のページを開いた。",
 		   NULL, "...I turned the page without pausing.", GetGlobalFlag(GLinemodeSp));
 
-	PlaySE( 4, "wa_021", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_021", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Kami", 56, 64 ); }
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n\n", Line_ContinueAfterTyping); }
 
 //　……そこには…￥
@@ -4488,11 +4566,14 @@ void main()
 
 
 
-	PlaySE( 4, "wa_027", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_027", 56, 64 ); }
 	if (GetGlobalFlag(GADVMode) == 0) { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 //"犯人達は被害者を鉈やつるはしで滅多打ちにして惨殺し、"!w2500@
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
+//Failed to insert some PS3 instruction!
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 1, "ps3/Semi_r", 128, 0 ); }
+//End failed instructions
 	OutputLine(NULL, "“犯人達は被害者を鉈やつるはしで滅多打ちにして惨殺し、”",
 		   NULL, "\"The assailants butchered the victim's body with hatchets and pickaxes,", Line_ContinueAfterTyping);
 

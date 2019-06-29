@@ -5,6 +5,10 @@ void main()
 void dialog000()
 {
 //「さぁねぇ＠昔、殺して埋めたバラバラ死体でも確認してるんじゃないすか？＠
+//Failed to insert some PS3 instruction!
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlayBGM( 2, "ps3/HM01_06", 128, 0 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Higurasi", 256, 64 ); }
+//End failed instructions
 	if (GetGlobalFlag(GADVMode)) { OutputLine("<color=#956f6e>圭一</color>", NULL, "<color=#956f6e>Keiichi</color>", NULL, Line_ContinueAfterTyping); }
 	ModPlayVoiceLS(3, 1, "ps3/s19/01/hr_kei02310", 256, TRUE);
 	OutputLine(NULL, "「さぁねぇ。",

@@ -111,11 +111,12 @@ void dialog006()
 
 
 
-	PlaySE( 4, "wa_010", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_010", 56, 64 ); }
 	Wait( 200 );
-	PlaySE( 4, "wa_010", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_010", 56, 64 ); }
 	Wait( 200 );
-	PlaySE( 4, "wa_010", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_010", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Kyupirn", 56, 64 ); }
 	Wait( 200 );
 
 //　きゅぴーんという音が３回した。３ゲージ技かッ？￥

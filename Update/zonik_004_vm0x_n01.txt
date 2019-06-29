@@ -98,11 +98,11 @@ void dialog003()
 	OutputLine(NULL, "　レナんちに墜落したのはなんと……",
 		   NULL, " What fell on Rena's house...", Line_Continue);
 
-	PlaySE( 4, "wa_008", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_008", 56, 64 ); }
 	Wait( 200 );
-	PlaySE( 4, "wa_008", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_008", 56, 64 ); }
 	Wait( 200 );
-	PlaySE( 4, "wa_008", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_008", 56, 64 ); }
 	Wait( 200 );
 	OutputLineAll(NULL, "", Line_WaitForInput);
 
@@ -111,7 +111,8 @@ void dialog003()
 	OutputLine(NULL, "小惑星だッ！！」",
 		   NULL, "was a comet!!\"", Line_Continue);
 
-	PlaySE( 4, "wa_007", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_007", 56, 64 ); }
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 4, "ps3/Finish", 56, 64 ); }
 	ShakeScreen( 1, 50, 20, 3, 0, );
 	OutputLineAll(NULL, "", Line_Normal);
 
@@ -142,7 +143,7 @@ void dialog003()
 	OutputLine(NULL, "　地球軍の完全な誤算だッ！！」",
 		   NULL, "The Earth Federation was totally unprepared!!\"", Line_Continue);
 
-	PlaySE( 4, "wa_007", 56, 64 );
+	if (GetGlobalFlag(GAltBGMflow) == 0) { PlaySE( 4, "wa_007", 56, 64 ); }
 	ShakeScreen( 0, 50, 20, 3, 0, );
 	OutputLineAll(NULL, "", GetGlobalFlag(GLinemodeSp));
 
@@ -218,6 +219,9 @@ void dialog004()
 	ModPlayVoiceLS(3, 1, "ps3/s19/01/hr_kei06020", 256, TRUE);
 	OutputLine(NULL, "小惑星の百個や二百個くらい、音速を超える光速のパンチで一撃だぁぁ！！」",
 		   NULL, " One or two hundred asteroids are nothing before one of her light-speed punches!\"", GetGlobalFlag(GLinemodeSp));
+//Failed to insert some PS3 instruction!
+	if (GetGlobalFlag(GAltBGMflow) == 1) { PlaySE( 3, "ps3/Finish", 256, 64 ); }
+//End failed instructions
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 }
 
