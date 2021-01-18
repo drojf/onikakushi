@@ -28,7 +28,7 @@ void main()
 	ClearMessage();
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　…誰かが、ずっと謝っている気がした。",
-		   NULL, "...Somebody has been apologizing for a while now.", Line_Normal);
+		   NULL, "...Somebody has been apoldfsadfsadfsadfsafjsdalkdfjsaljdflsakfjdasdjfksdjogizing for a while now.", Line_Normal);
 	ClearMessage();
 
 //　彼女は何を謝っているのだろう＠
