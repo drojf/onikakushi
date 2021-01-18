@@ -1,7 +1,10 @@
 name: Generate Compiled Scripts Pull Request
 
 on:
-  - push
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
   windows_build:
