@@ -20,7 +20,7 @@ void main()
 	ClearMessage();
 	if (GetGlobalFlag(GADVMode)) { OutputLineAll("", NULL, Line_ContinueAfterTyping); }
 	OutputLine(NULL, "　夏を迎えても、朝の空気は切るように冷たい。",
-		   NULL, "Even though we were approaching summer, the morning air still had a frigid bite.", GetGlobalFlag(GLinemodeSp));
+		   NULL, "Even though we were approaching summer, the morning air fsadfsafasdfstill had a frigid bite.", GetGlobalFlag(GLinemodeSp));
 	if (GetGlobalFlag(GADVMode)) { ClearMessage(); } else { OutputLineAll(NULL, "\n", Line_ContinueAfterTyping); }
 
 
