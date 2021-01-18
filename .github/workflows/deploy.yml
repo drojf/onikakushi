@@ -11,8 +11,8 @@ jobs:
       matrix:
         python-version: [3.8]
     steps:
-      # Download the repository
-      - uses: actions/checkout@v2
+      - name: Checkout the repository
+        uses: actions/checkout@v2
 
       # Setup python (Windows VM is Python 3.7 by default, we need at least Python 3.8)
       - name: Set up Python ${{ matrix.python-version }}
@@ -26,7 +26,6 @@ jobs:
           pip install -r requirements.txt
           rm requirements.txt
 
-      # Run Python Release Script
       - name: Run Release Script
         env:
           EXTRACT_KEY: ${{ secrets.EXTRACT_KEY }}
@@ -35,11 +34,14 @@ jobs:
           python compile_higurashi_scripts.py onikakushi
           rm compile_higurashi_scripts.py
 
-      # Create new Pull Request
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
           commit-message: update compiled scripts
           title: Update compiled scripts
-          body: Update compiled scripts
+          body: |
+            This is an automatically generated pull request.
+
+            This pull request compiles all the scripts in the `Update` folder into the `CompiledUpdateScripts` folder,
+            so the end-user does not need to compile it on their end.
           branch: update-compiled-scripts
