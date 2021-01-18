@@ -1,0 +1,42 @@
+name: Generate Compiled Scripts Pull Request
+
+on:
+  - push
+
+jobs:
+  windows_build:
+    name: Windows Build
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+    steps:
+      # Download the repository
+      - uses: actions/checkout@v2
+
+      # Setup python (Windows VM is Python 3.7 by default, we need at least Python 3.8)
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # Run Python Release Script
+      - name: Run Release Script
+        env:
+          EXTRACT_KEY: ${{ secrets.EXTRACT_KEY }}
+        run: |
+          curl -OJ https://raw.githubusercontent.com/drojf/higurashi_release/master/compile_higurashi_scripts.py
+          python compile_higurashi_scripts.py onikakushi
+          rm compile_higurashi_scripts.py
+
+      # Create new Pull Request
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: update compiled scripts
+          title: Update compiled scripts
+          body: Update compiled scripts
+          branch: update-compiled-scripts
