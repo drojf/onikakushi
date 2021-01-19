@@ -23,12 +23,16 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      # NOTE: I use ${{ github.event.repository.name }} so the script knows what game is being compiled, but not
+      #       sure if this works in all cases, see:
+      #       https://stackoverflow.com/questions/62803531/repository-name-as-a-github-action-environment-variable
+      #       may need to use ${{ github.event.pull_request.base.repo.name }} for pull requests?
       - name: Run Release Script
         env:
           EXTRACT_KEY: ${{ secrets.EXTRACT_KEY }}
         run: |
-          curl -OJ https://raw.githubusercontent.com/drojf/higurashi_release/master/compile_higurashi_scripts.py
-          python compile_higurashi_scripts.py onikakushi
+          curl -OJ https://raw.githubusercontent.com/07th-mod/higurashi_release/master/compile_higurashi_scripts/compile_higurashi_scripts.py
+          python compile_higurashi_scripts.py ${{ github.event.repository.name }}
           rm compile_higurashi_scripts.py
 
       - name: Create Pull Request
