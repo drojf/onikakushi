@@ -25,7 +25,7 @@ jobs:
         env:
           EXTRACT_KEY: ${{ secrets.EXTRACT_KEY }}
         run: |
-          curl -OJ https://raw.githubusercontent.com/07th-mod/higurashi_release/master/compile_higurashi_scripts/compile_higurashi_scripts.py
+          curl -OJ https://raw.githubusercontent.com/drojf/higurashi_release/old_work/compile_higurashi_scripts.py
           python compile_higurashi_scripts.py ${{ github.event.repository.name }}
           rm compile_higurashi_scripts.py
 
