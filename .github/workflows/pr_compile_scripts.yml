@@ -8,7 +8,7 @@ jobs:
   dll_build:
     name: Build DLL
     # Need to use windows to build a .exe (might be able to switch to linux executable/linux later, but leave as windows for now)
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3
@@ -42,7 +42,7 @@ jobs:
   windows_build:
     name: Windows Build
     needs: dll_build
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     strategy:
