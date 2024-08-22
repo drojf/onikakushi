@@ -48,6 +48,8 @@ jobs:
 
       - name: Checkout the script repository
         uses: actions/checkout@v4
+        with:
+          clean: false # Keep the ./dll/ files in the current folder we generated earlier
 
       # Setup python (Windows VM is Python 3.7 by default, we need at least Python 3.8)
       - name: Set up Python ${{ matrix.python-version }}
