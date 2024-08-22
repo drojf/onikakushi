@@ -6,7 +6,7 @@ on:
 
 jobs:
   dll_build:
-    name: Build DLL
+    name: Build DLL and Standalone Compiler
     # Need to use windows to build a .exe (might be able to switch to linux executable/linux later, but leave as windows for now)
     runs-on: ubuntu-latest
     steps:
@@ -41,7 +41,7 @@ jobs:
           if-no-files-found: error
 
   windows_build:
-    name: Windows Build
+    name: Compile Scripts and Prepare Release (Publish on tags only)
     needs: dll_build
     runs-on: ubuntu-latest
     permissions:
@@ -65,20 +65,6 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-
-      - uses: actions/upload-artifact@v4
-        with:
-
-          # A file, directory or wildcard pattern that describes what to upload
-          # Required.
-          path: |
-            **/*.*
-
-          # Duration after which artifact will expire in days. 0 means using default retention.
-          # Minimum 1 day.
-          # Maximum 90 days unless changed from the repository settings page.
-          # Optional. Defaults to repository settings.
-          retention-days: 1
 
       - name: Run Release Script
         id: run_release
