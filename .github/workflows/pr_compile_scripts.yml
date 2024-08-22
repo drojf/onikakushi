@@ -15,6 +15,11 @@ jobs:
       matrix:
         python-version: [3.8]
     steps:
+      - name: Force git to use CRLF (on unix will checkout as LF otherwise)
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.eol crlf
+
       - name: Checkout the script repository
         uses: actions/checkout@v4
 
