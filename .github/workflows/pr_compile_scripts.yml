@@ -27,16 +27,17 @@ jobs:
         run: >-
           git show --pretty="format:Commit: %H %d%nDate: %cs%n%n%B" --no-patch > ./bin/Release/Assembly-CSharp.version.txt
 
+      # ./bin/ScriptCompiler/System.Core.dll
+      # ./bin/ScriptCompiler/Antlr3.Runtime.dll
+      # ./bin/ScriptCompiler/HigurashiScriptCompiler.exe
+      # ./bin/Release/Assembly-CSharp.dll
+      # ./bin/Release/Assembly-CSharp.version.txt
       - name: Upload DLL as Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: higurashi-dll
           path: |
-            ./bin/ScriptCompiler/System.Core.dll
-            ./bin/ScriptCompiler/Antlr3.Runtime.dll
-            ./bin/ScriptCompiler/HigurashiScriptCompiler.exe
-            ./bin/Release/Assembly-CSharp.dll
-            ./bin/Release/Assembly-CSharp.version.txt
+            bin/
           if-no-files-found: error
 
   windows_build:
@@ -53,10 +54,11 @@ jobs:
         uses: actions/checkout@v3
 
       # Download Windows artifacts
-      - name: Download DLL
-        uses: actions/download-artifact@v3
+      - name: Download Artifacts (DLLs and Standalone Script Compiler)
+        uses: actions/download-artifact@v4
         with:
           name: higurashi-dll
+          path: bin/ # when uploading it removes the containing dir, need to add it back in
 
       # Setup python (Windows VM is Python 3.7 by default, we need at least Python 3.8)
       - name: Set up Python ${{ matrix.python-version }}
