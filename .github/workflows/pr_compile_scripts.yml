@@ -15,6 +15,9 @@ jobs:
       matrix:
         python-version: [3.8]
     steps:
+      - name: Checkout the script repository
+        uses: actions/checkout@v4
+
       - name: Checkout the higurashi-assembly (DLL) repository
         uses: actions/checkout@v4
         with:
@@ -45,11 +48,6 @@ jobs:
       # ./bin/ScriptCompiler/HigurashiScriptCompiler.exe
       # ./bin/Release/Assembly-CSharp.dll
       # ./bin/Release/Assembly-CSharp.version.txt
-
-      - name: Checkout the script repository
-        uses: actions/checkout@v4
-        with:
-          clean: false # Keep the ./dll/ files in the current folder we generated earlier
 
       # Setup python (Windows VM is Python 3.7 by default, we need at least Python 3.8)
       - name: Set up Python ${{ matrix.python-version }}
